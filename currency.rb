@@ -11,4 +11,9 @@ class Currency
   def get_code
     @code
   end
+
+  def add_amount(amount, code)
+    @amount += amount
+  end
+
 end
