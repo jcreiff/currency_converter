@@ -13,16 +13,20 @@ class Currency
     @code
   end
 
-  def compare(code)
-    if @code == code.get_code
+  def ==(other)
+    if @code == other.get_code
       @compare = true
     else
       @compare = false
     end
   end
 
-  def add_amount(amount)
-    @amount += amount
+  def add_amount(amount, code)
+   if @code == code
+      @amount += amount
+    else
+      puts "Error!"
+    end
   end
 
 end

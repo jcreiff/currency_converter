@@ -9,6 +9,6 @@ p us_dollar
 puts us_dollar.get_amount
 puts us_dollar.get_code
 
-puts us_dollar.add_amount(60)
+puts us_dollar.add_amount(60, "EUR")
 
-puts euro.compare(us_dollar)
+puts us_dollar == us_dollar
