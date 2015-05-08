@@ -1,8 +1,18 @@
 class Currency
-  def initialize(amount, code)
-    @amount = amount
-    @code = code
-    @amount_code = [amount, code].join(" ")
+  def initialize(amount, code=Hash.new)
+    code_hash = {"$" => "USD", "€" => "EUR", "£" => "GBP",
+                 "¥" => "JPY", "₹" => "INR", "R" => "ZAR"}
+    if code_hash.include?amount.to_s[0]
+      symbol = amount.to_s[0]
+      @code = code_hash[symbol]
+      @amount = amount[1..-1].to_f.round(2)
+    elsif code == {}
+      raise CurrencyCodeError, "Must specify currency."
+    else
+      @amount = amount.to_f.round(2)
+      @code = code
+    end
+    @amount_code = [@amount, @code].join(" ")
   end
 
   class CurrencyCodeError < StandardError

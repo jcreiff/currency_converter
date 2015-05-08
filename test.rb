@@ -2,27 +2,26 @@ require './currency.rb'
 
 
 
-us_dollar = Currency.new(50, "USD")
-euro = Currency.new(75, "EUR")
+# us_dollar = Currency.new(50, "USD")
+# euro = Currency.new(75, "EUR")
 
-joe_money = Currency.new(75, "USD")
-jen_money = Currency.new(50, "USD")
-kev_money = Currency.new(50, "EUR")
-syd_money = Currency.new(50, "EUR")
+joe_money = Currency.new("$75006.78975")
+puts "Joe: #{joe_money.amount_code}"
+jen_money = Currency.new("R75.57", "USD")
+puts "Jen: #{jen_money.amount_code}"
+kev_money = Currency.new("€50")
+puts "Kev: #{kev_money.amount_code}"
+syd_money = Currency.new(75)
+puts "Syd: #{syd_money.amount_code}"
 
+# our_money = joe_money * 2.7697
 # puts "Joe: #{joe_money.amount_code}"
 # puts "Jen: #{jen_money.amount_code}"
-# puts "Kev: #{kev_money.amount_code}"
-# puts "Syd: #{syd_money.amount_code}"
-
-our_money = joe_money * 2.7697
-puts "Joe: #{joe_money.amount_code}"
-puts "Jen: #{jen_money.amount_code}"
-puts "Us: #{our_money.amount_code}"
-
-puts joe_money
-puts jen_money
-puts our_money
+# puts "Us: #{our_money.amount_code}"
+#
+# puts joe_money
+# puts jen_money
+# puts our_money
 #puts joe_money + kev_money
 
 # puts kev_money - syd_money
