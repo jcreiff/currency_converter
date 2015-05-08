@@ -7,37 +7,44 @@ class Currency
     @round = round
   end
 
-  def get_amount
-    @amount_code
+  class CurrencyCodeError < StandardError
   end
 
-  def get_code
+  def amount
+    @amount
+  end
+
+  def code
     @code
   end
 
+  def amount_code
+    @amount_code
+  end
+
   def == (other)
-    if @amount_code == other.get_amount
+    if @amount_code == other.amount_code
       @compare = true
     else
       @compare = false
     end
   end
 
-  def add_amount(amount, code)
-   if @code == code
-      @amount += amount
-      @amount_code = [@amount, code].join(" ")
+  def + (other)
+    if @code != other.code
+     raise CurrencyCodeError, "Cannot combine different currencies."
     else
-      puts "Error!"
+      new_amount = @amount + other.amount
+      return [new_amount, code].join(" ")
     end
   end
 
-  def subtract_amount(amount, code)
-   if @code == code
-      @amount -= amount
-      @amount_code = [@amount, code].join(" ")
+  def - (other)
+    if @code != other.code
+      raise CurrencyCodeError, "Cannot combine different currencies."
     else
-      puts "Error!"
+      new_amount = @amount - other.amount
+      return [new_amount, code].join(" ")
     end
   end
 
@@ -45,7 +52,7 @@ class Currency
     @round
   end
 
-  def multiply(number)
+  def * (number)
     @amount = (@amount * number).round(2)
     @amount_code = [@amount, @code].join(" ")
   end
