@@ -1,9 +1,10 @@
 class Currency
-  def initialize(amount, code, compare=true)
+  def initialize(amount, code, compare=true, round=true)
     @amount = amount
     @code = code
     @amount_code = [amount, code].join(" ")
     @compare = compare
+    @round = round
   end
 
   def get_amount
@@ -39,4 +40,14 @@ class Currency
       puts "Error!"
     end
   end
+
+  def round()
+    @round
+  end
+
+  def multiply(number)
+    @amount = (@amount * number).round(2)
+    @amount_code = [@amount, @code].join(" ")
+  end
+
 end
