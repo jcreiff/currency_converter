@@ -15,10 +15,14 @@ syd_money = Currency.new(50, "EUR")
 # puts "Kev: #{kev_money.amount_code}"
 # puts "Syd: #{syd_money.amount_code}"
 
-our_money = joe_money + jen_money
+our_money = joe_money - jen_money
 puts "Joe: #{joe_money.amount_code}"
 puts "Jen: #{jen_money.amount_code}"
 puts "Us: #{our_money.amount_code}"
+
+puts joe_money
+puts jen_money
+puts our_money
 #puts joe_money + kev_money
 
 # puts kev_money - syd_money
@@ -51,10 +55,10 @@ puts "Us: #{our_money.amount_code}"
 # puts "Kev + 50 EUR = #{kev_money.amount}"
 # puts "Syd still = #{syd_money.amount}"
 #
-puts "Joe = Jen: #{joe_money == jen_money}"
-puts "Kev = Syd: #{kev_money == syd_money}"
-puts "Jen = Kev: #{jen_money == kev_money}"
-puts "Jen = Syd: #{jen_money == syd_money}"
+# puts "Joe = Jen: #{joe_money == jen_money}"
+# puts "Kev = Syd: #{kev_money == syd_money}"
+# puts "Jen = Kev: #{jen_money == kev_money}"
+# puts "Jen = Syd: #{jen_money == syd_money}"
 #
 # joe_money.subtract_amount(75, "USD")
 # jen_money.subtract_amount(50, "USD")

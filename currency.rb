@@ -43,7 +43,7 @@ class Currency
       raise CurrencyCodeError, "Cannot combine different currencies."
     else
       new_amount = @amount - other.amount
-      return [new_amount, code].join(" ")
+      return Currency.new(new_amount, @code)
     end
   end
 
