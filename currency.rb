@@ -1,5 +1,5 @@
 class Currency
-  def initialize(amount, code=Hash.new)
+  def initialize(amount = 1, code=Hash.new)
     code_hash = {"$" => "USD", "€" => "EUR", "£" => "GBP",
                  "¥" => "JPY", "₹" => "INR", "R" => "ZAR"}
     if code_hash.include?amount.to_s[0]
