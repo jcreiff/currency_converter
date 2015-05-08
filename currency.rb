@@ -1,9 +1,8 @@
 class Currency
-  def initialize(amount, code, round=true)
+  def initialize(amount, code)
     @amount = amount
     @code = code
     @amount_code = [amount, code].join(" ")
-    @round = round
   end
 
   class CurrencyCodeError < StandardError
@@ -45,10 +44,6 @@ class Currency
       new_amount = @amount - other.amount
       return Currency.new(new_amount, @code)
     end
-  end
-
-  def round()
-    @round
   end
 
   def * (number)
