@@ -6,7 +6,7 @@ class Currency
   end
 
   def get_amount
-    @amount
+    [@amount, @code].join("")
   end
 
   def get_code
