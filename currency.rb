@@ -2,11 +2,12 @@ class Currency
   def initialize(amount, code, compare=true)
     @amount = amount
     @code = code
+    @amount_code = [amount, code].join(" ")
     @compare = compare
   end
 
   def get_amount
-    [@amount, @code].join("")
+    @amount_code
   end
 
   def get_code
@@ -14,7 +15,7 @@ class Currency
   end
 
   def ==(other)
-    if @code == other.get_code
+    if @amount_code == other.get_amount
       @compare = true
     else
       @compare = false

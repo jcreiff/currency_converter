@@ -15,8 +15,8 @@ puts jen_money.get_amount
 puts kev_money.get_amount
 puts syd_money.get_amount
 
-puts joe_money == jen_money
-puts kev_money == syd_money
+puts joe_money == kev_money
+puts jen_money == syd_money
 
 
 # p us_dollar
