@@ -52,8 +52,8 @@ class Currency
   end
 
   def * (number)
-    @amount = (@amount * number).round(2)
-    @amount_code = [@amount, @code].join(" ")
+    new_amount = (@amount * number).round(2)
+    return Currency.new(new_amount, @code)
   end
 
 end

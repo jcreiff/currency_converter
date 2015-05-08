@@ -15,7 +15,7 @@ syd_money = Currency.new(50, "EUR")
 # puts "Kev: #{kev_money.amount_code}"
 # puts "Syd: #{syd_money.amount_code}"
 
-our_money = joe_money - jen_money
+our_money = joe_money * 2.7697
 puts "Joe: #{joe_money.amount_code}"
 puts "Jen: #{jen_money.amount_code}"
 puts "Us: #{our_money.amount_code}"
