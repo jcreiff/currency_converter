@@ -1,8 +1,8 @@
 require './currency.rb'
 require './converter.rb'
 
-dollar = CurrencyConverter.new(1, "USD")
-euro = CurrencyConverter.new(0.75, "EUR")
+dollar = CurrencyConverter.new("USD", 1)
+euro = CurrencyConverter.new("EUR", 0.75)
 
 puts dollar.hash
 puts euro.hash

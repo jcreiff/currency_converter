@@ -1,17 +1,17 @@
 class CurrencyConverter
 
-  def initialize(rate, code)
-    @rate = rate
+  def initialize(code, rate)
     @code = code
-    @hash = {rate => code}
-  end
-
-  def rate
-    @rate
+    @rate = rate
+    @hash = {code => rate}
   end
 
   def code
     @code
+  end
+
+  def rate
+    @rate
   end
 
   def hash
