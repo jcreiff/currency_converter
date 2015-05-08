@@ -25,6 +25,7 @@ class Currency
   def add_amount(amount, code)
    if @code == code
       @amount += amount
+      @amount_code = [@amount, code].join(" ")
     else
       puts "Error!"
     end
