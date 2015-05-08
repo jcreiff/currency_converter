@@ -1,7 +1,8 @@
 class Currency
-  def initialize(amount, code)
+  def initialize(amount, code, compare=true)
     @amount = amount
     @code = code
+    @compare = compare
   end
 
   def get_amount
@@ -12,7 +13,15 @@ class Currency
     @code
   end
 
-  def add_amount(amount, code)
+  def compare(code)
+    if @code == code.get_code
+      @compare = true
+    else
+      @compare = false
+    end
+  end
+
+  def add_amount(amount)
     @amount += amount
   end
 
