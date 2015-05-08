@@ -14,7 +14,7 @@ class Currency
     @code
   end
 
-  def ==(other)
+  def == (other)
     if @amount_code == other.get_amount
       @compare = true
     else
@@ -31,4 +31,12 @@ class Currency
     end
   end
 
+  def subtract_amount(amount, code)
+   if @code == code
+      @amount -= amount
+      @amount_code = [@amount, code].join(" ")
+    else
+      puts "Error!"
+    end
+  end
 end

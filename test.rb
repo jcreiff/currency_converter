@@ -33,6 +33,21 @@ puts "Kev = Syd: #{kev_money == syd_money}"
 puts "Jen = Kev: #{jen_money == kev_money}"
 puts "Jen = Syd: #{jen_money == syd_money}"
 
+joe_money.subtract_amount(75, "USD")
+jen_money.subtract_amount(50, "USD")
+kev_money.subtract_amount(50, "EUR")
+syd_money.subtract_amount(50, "USD")
+
+puts "Joe - 75 USD = #{joe_money.get_amount}"
+puts "Jen - 50 USD = #{jen_money.get_amount}"
+puts "Kev - 50 EUR = #{kev_money.get_amount}"
+puts "Syd still = #{syd_money.get_amount}"
+
+puts "Joe = Jen: #{joe_money == jen_money}"
+puts "Kev = Syd: #{kev_money == syd_money}"
+puts "Jen = Kev: #{jen_money == kev_money}"
+puts "Jen = Syd: #{jen_money == syd_money}"
+
 # p us_dollar
 #
 # puts us_dollar.get_amount
