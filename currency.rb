@@ -1,9 +1,8 @@
 class Currency
-  def initialize(amount, code, compare=true, round=true)
+  def initialize(amount, code, round=true)
     @amount = amount
     @code = code
     @amount_code = [amount, code].join(" ")
-    @compare = compare
     @round = round
   end
 
@@ -24,9 +23,9 @@ class Currency
 
   def == (other)
     if @amount_code == other.amount_code
-      @compare = true
+      return true
     else
-      @compare = false
+      return false
     end
   end
 

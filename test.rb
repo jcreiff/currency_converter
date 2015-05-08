@@ -5,7 +5,7 @@ require './currency.rb'
 us_dollar = Currency.new(50, "USD")
 euro = Currency.new(75, "EUR")
 
-joe_money = Currency.new(50, "USD")
+joe_money = Currency.new(75, "USD")
 jen_money = Currency.new(50, "USD")
 kev_money = Currency.new(50, "EUR")
 syd_money = Currency.new(50, "EUR")
@@ -18,16 +18,16 @@ puts "Syd: #{syd_money.amount_code}"
 puts joe_money + jen_money
 puts joe_money.amount_code
 puts jen_money.amount_code
-#puts joe_money + kev_money
+puts joe_money + kev_money
 
 # puts kev_money - syd_money
 # puts kev_money.amount_code
 # puts syd_money.amount_code
 # puts jen_money - syd_money
-puts "Joe x 2 = #{joe_money *2}"
-puts "Jen x 2.5 = #{jen_money * 2.5}"
-puts "Kev x -3 = #{kev_money * 3}"
-puts "Syd x 0.557 = #{syd_money *0.557}"
+# puts "Joe x 2 = #{joe_money *2}"
+# puts "Jen x 2.5 = #{jen_money * 2.5}"
+# puts "Kev x -3 = #{kev_money * 3}"
+# puts "Syd x 0.557 = #{syd_money *0.557}"
 
 # puts "Joe: #{joe_money.amount}"
 # puts "Jen: #{jen_money.amount}"
