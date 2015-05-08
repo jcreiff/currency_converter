@@ -1,21 +1,22 @@
 class CurrencyConverter
 
-  def initialize(code, rate)
-    @code = code
-    @rate = rate
-    @hash = {code => rate}
+  def initialize(hash)
+    @conversions = hash
   end
 
-  def code
-    @code
+  def conversions
+    @conversions
   end
 
-  def rate
-    @rate
+  class UnknownCurrencyCodeError < StandardError
   end
 
-  def hash
-    @hash
+  def convert(currency, other)
+    if !@conversions.include?(currency.code) || !@conversions.include?(other)
+      raise UnknownCurrencyCodeError, "Cannot convert unknown currencies."
+    else
+      Currency.new(currency.amount * (@conversions[other]), other)
+    end
   end
 
 end
