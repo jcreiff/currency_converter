@@ -48,4 +48,4 @@ p thousand_yen
 
 # 8a. Throws error if given amount with no symbol and no code
 #     (uncomment to watch it break)
-twenty_something = Currency.new(20)
+#twenty_something = Currency.new(20)
