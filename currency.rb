@@ -1,4 +1,7 @@
 class Currency
+
+  attr_reader :code, :amount, :amount_code
+
   def initialize(amount = 1, code=Hash.new)
     code_hash = {"$" => "USD", "€" => "EUR", "£" => "GBP",
                  "¥" => "JPY", "₹" => "INR", "R" => "ZAR"}
@@ -16,18 +19,6 @@ class Currency
   end
 
   class CurrencyCodeError < StandardError
-  end
-
-  def amount
-    @amount
-  end
-
-  def code
-    @code
-  end
-
-  def amount_code
-    @amount_code
   end
 
   def == (other)

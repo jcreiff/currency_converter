@@ -10,4 +10,4 @@ exchange_rate = CurrencyConverter.new({"USD" => 1, "EUR" => 0.89258, "JPY" => 11
 # puts exchange_rate.conversions
 #puts exchange_rate.convert(dollar, euro)
 
-p exchange_rate.convert(euro, "JPY")
+p exchange_rate.convert(euro, "USD")

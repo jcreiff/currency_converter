@@ -1,11 +1,9 @@
 class CurrencyConverter
 
+  attr_reader :conversions
+
   def initialize(hash)
     @conversions = hash
-  end
-
-  def conversions
-    @conversions
   end
 
   class UnknownCurrencyCodeError < StandardError
