@@ -2,15 +2,15 @@ class Currency
 
   attr_reader :code, :amount, :amount_code
 
-  def initialize(amount = 1, code=Hash.new)
+  def initialize(amount = 1, code="")
     code_hash = {"$" => "USD", "€" => "EUR", "£" => "GBP",
                  "¥" => "JPY", "₹" => "INR", "R" => "ZAR"}
     if code_hash.include?amount.to_s[0]
       symbol = amount.to_s[0]
       @code = code_hash[symbol]
       @amount = amount[1..-1].to_f.round(2)
-    elsif code == {}
-      raise CurrencyCodeError, "Must specify currency."
+    elsif code.empty?
+      raise DifferentCurrencyCodeError, "Must specify currency."
     else
       @amount = amount.to_f.round(2)
       @code = code
@@ -18,7 +18,7 @@ class Currency
     @amount_code = [@amount, @code].join(" ")
   end
 
-  class CurrencyCodeError < StandardError
+  class DifferentCurrencyCodeError < StandardError
   end
 
   def == (other)
@@ -31,7 +31,7 @@ class Currency
 
   def + (other)
     if @code != other.code
-     raise CurrencyCodeError, "Cannot combine different currencies."
+     raise DifferentCurrencyCodeError, "Cannot combine different currencies."
     else
       new_amount = @amount + other.amount
       return Currency.new(new_amount, @code)
@@ -40,7 +40,7 @@ class Currency
 
   def - (other)
     if @code != other.code
-      raise CurrencyCodeError, "Cannot combine different currencies."
+      raise DifferentCurrencyCodeError, "Cannot combine different currencies."
     else
       new_amount = @amount - other.amount
       return Currency.new(new_amount, @code)

@@ -1,84 +1,51 @@
 require './currency.rb'
 
+# 1. Created with an amount and currency code
+dollar = Currency.new(1, "USD")
+print "1. "
+p dollar
 
+# 2. Equal to another currency object with same amount & code
+other_dollar = Currency.new(1, "USD")
+print "2. "
+puts dollar == other_dollar
+#=>true
 
-# us_dollar = Currency.new(50, "USD")
-# euro = Currency.new(75, "EUR")
+# 3. Not equal to another currency object with
+#    different amount or different code
+euro = Currency.new(1, "EUR")
+five_dollar = Currency.new(5, "USD")
+print "3. "
+puts dollar == euro
+#=>false
+puts dollar == five_dollar
+#=>false
 
-joe_money = Currency.new("$75006.78975")
-puts "Joe: #{joe_money.amount_code}"
-jen_money = Currency.new("R75.57", "USD")
-puts "Jen: #{jen_money.amount_code}"
-kev_money = Currency.new("€50")
-puts "Kev: #{kev_money.amount_code}"
-syd_money = Currency.new(75)
-puts "Syd: #{syd_money.amount_code}"
+# 4. Can add to another currency object with same code
+print "4. "
+p dollar + five_dollar
 
-# our_money = joe_money * 2.7697
-# puts "Joe: #{joe_money.amount_code}"
-# puts "Jen: #{jen_money.amount_code}"
-# puts "Us: #{our_money.amount_code}"
-#
-# puts joe_money
-# puts jen_money
-# puts our_money
-#puts joe_money + kev_money
+# 5. Can subtract from another currency object with same code
+print "5. "
+p five_dollar - dollar
 
-# puts kev_money - syd_money
-# puts kev_money.amount_code
-# puts syd_money.amount_code
-# puts jen_money - syd_money
-# puts "Joe x 2 = #{joe_money *2}"
-# puts "Jen x 2.5 = #{jen_money * 2.5}"
-# puts "Kev x -3 = #{kev_money * 3}"
-# puts "Syd x 0.557 = #{syd_money *0.557}"
+# 6. Raises DifferentCurrencyCodeError when attempting to add
+#    or subtract objects with different currency codes
+#    (uncomment one at a time to watch it break)
+#print "6. "
+#p dollar + euro
+#p euro - dollar
 
-# puts "Joe: #{joe_money.amount}"
-# puts "Jen: #{jen_money.amount}"
-# puts "Kev: #{kev_money.amount}"
-# puts "Syd: #{syd_money.amount}"
+# 7. Can multiply by Fixnum or Float and return new object
+print "7. "
+p euro * 10
+p five_dollar * 7.5897
 
-# puts joe_money.add_amount(kev_money)
-# puts joe_money.add_amount(jen_money)
+# 8. Can take one argument with symbol and assign code
+thousand_yen = Currency.new("¥1000")
+print "8. "
+p thousand_yen
 
-# puts "Joe = Jen: #{joe_money == jen_money}"
-# puts "Kev = Syd: #{kev_money == syd_money}"
-#
-# joe_money.add_amount(75, "USD")
-# jen_money.add_amount(50, "USD")
-# kev_money.add_amount(50, "EUR")
-# syd_money.add_amount(50, "USD")
-#
-# puts "Joe + 75 USD = #{joe_money.amount}"
-# puts "Jen + 50 USD = #{jen_money.amount}"
-# puts "Kev + 50 EUR = #{kev_money.amount}"
-# puts "Syd still = #{syd_money.amount}"
-#
-# puts "Joe = Jen: #{joe_money == jen_money}"
-# puts "Kev = Syd: #{kev_money == syd_money}"
-# puts "Jen = Kev: #{jen_money == kev_money}"
-# puts "Jen = Syd: #{jen_money == syd_money}"
-#
-# joe_money.subtract_amount(75, "USD")
-# jen_money.subtract_amount(50, "USD")
-# kev_money.subtract_amount(50, "EUR")
-# syd_money.subtract_amount(50, "USD")
-#
-# puts "Joe - 75 USD = #{joe_money.amount}"
-# puts "Jen - 50 USD = #{jen_money.amount}"
-# puts "Kev - 50 EUR = #{kev_money.amount}"
-# puts "Syd still = #{syd_money.amount}"
-#
-# puts "Joe = Jen: #{joe_money == jen_money}"
-# puts "Kev = Syd: #{kev_money == syd_money}"
-# puts "Jen = Kev: #{jen_money == kev_money}"
-# puts "Jen = Syd: #{jen_money == syd_money}"
-
-# p us_dollar
-#
-# puts us_dollar.amount
-# puts us_dollar.code
-#
-# puts us_dollar.add_amount(60, "EUR")
-#
-# puts us_dollar == us_dollar
+# 8a. Throws error if given amount with no symbol and no code
+#     (uncomment to watch it break)
+#twenty_something = Currency.new(20)
