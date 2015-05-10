@@ -35,6 +35,7 @@ p conversions.convert(pound, "USD")
 
 # 5. Raises an UnknownCurrencyCodeError when you try to convert
 #    from or to a currency code it doesn't know about.
-#    (un-comment to watch it break)
+#    (un-comment one at a time to watch it break)
 #print "5. "
 #p conversions.convert(dollar, "MXN")
+#p conversions.convert(Currency.new(1, "MXN"), "USD")
