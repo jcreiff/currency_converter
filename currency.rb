@@ -10,7 +10,7 @@ class Currency
       @code = code_hash[symbol]
       @amount = amount[1..-1].to_f.round(2)
     elsif code.empty?
-      raise DifferentCurrencyCodeError, "Must specify currency."
+      raise UnknownCurrencyCodeError, "Must specify currency."
     else
       @amount = amount.to_f.round(2)
       @code = code
@@ -19,6 +19,9 @@ class Currency
   end
 
   class DifferentCurrencyCodeError < StandardError
+  end
+
+  class UnknownCurrencyCodeError < StandardError
   end
 
   def == (other)
