@@ -32,3 +32,5 @@ Run `test_two.rb` to see what the `CurrencyConverter` can do.  It comes pre-load
 * South African rand (ZAR)
 * Indian rupee (INR)
 * the euro (EUR)
+
+######*Assignment from Week 1 of The Iron Yard's Ruby on Rails course (Durham)*
